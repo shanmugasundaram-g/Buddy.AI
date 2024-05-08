@@ -1,8 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import norm
-#import lance
-#from  import LoadStoryBoard, StoryBoard
+
 def normal_distribution(x, mu, sigma):
     
     return (1 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-0.5 * ((x - mu) / sigma) ** 2)
@@ -13,7 +12,7 @@ mu_values = [1]  # Variable mean values
 sigma_values = [1, 2,3]  # Variable standard deviation values
 
 # Plotting
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(10, 10))
 for mu in mu_values:
     for sigma in sigma_values:
         y = normal_distribution(x_values, mu, sigma)
@@ -30,12 +29,12 @@ plt.show()
 plt.close()
 
 # Example usage
-x_values = np.linspace(-3, 3, 1000)  # Generate 100 points between -3 and 3
+x_values = np.linspace(-3, 3, 1000)  # Generate 1000 points between -3 and 3
 mu_values1 = [1,2,3]  # Variable mean values
 sigma_values1 = [1]  # Variable standard deviation values
 
 # Plotting
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(10, 10))
 for mu in mu_values1:
     for sigma in sigma_values1:
         y = normal_distribution(x_values, mu, sigma)
