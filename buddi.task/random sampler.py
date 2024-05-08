@@ -4,12 +4,15 @@ def drawSamples(pmf: dict[str, int], n: int) -> list[str]:
     num = list(pmf.keys()) # reading different sample bucket
     sample = list(pmf.values()) # reading no of samples 
     tot = sum(sample)
-    prob = [1 / tot] #computing prob each sample occurence
-    cmf = [1 / tot]
-    for _ in sample[1:]:
+    # prob = [1 / tot] #computing prob each sample occurence
+    cmf = []
+    prob=[]
+    for _ in sample:
         prob.append(_ / tot)
-        cmf.append(_ / tot + cmf[-1])
-    print(sample, prob, cmf)
+    c=0
+    for i in prob:
+        c+=i
+        cmf.append(c)
 
     # importing the random module
     samplesize = n
